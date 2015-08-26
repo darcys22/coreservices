@@ -2,6 +2,8 @@
 Description=Node web server service
 
 [Service]
+User=core
+
 TimeoutStartSec=0
 KillMode=none
 
