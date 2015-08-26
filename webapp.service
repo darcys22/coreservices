@@ -2,6 +2,9 @@
 Description=Node web server service
 
 [Service]
+TimeoutStartSec=0
+KillMode=none
+
 EnvironmentFile=/etc/environment
 ExecStartPre=-/usr/bin/docker kill %n
 ExecStartPre=-/usr/bin/docker rm %n
