@@ -8,6 +8,8 @@ TimeoutStartSec=0
 KillMode=none
 
 EnvironmentFile=/etc/environment
+Environment='ENV=production'
+
 ExecStartPre=-/usr/bin/docker kill %n
 ExecStartPre=-/usr/bin/docker rm %n
 ExecStartPre=/usr/bin/docker pull darcys22/webapp
