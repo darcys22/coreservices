@@ -22,7 +22,15 @@ wont connect to etcd
 
 Steps to getting a website up and running:
 1: Have a github repo that works 
+
+
 2: build a docker image using that webserver
+
+
 3: change the webapp.service to pull from that docker repo
+
+
 4: start these services
+
+
 5: update nameservers to digital ocean
