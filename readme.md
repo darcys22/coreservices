@@ -34,3 +34,5 @@ Steps to getting a website up and running:
 
 
 5: update nameservers to digital ocean
+
+If you want SSL then use the darcys22/haproxyssl image (Uncomment) but you need to have your certs in the ~/config/certs file because docker mounts that to the loadbalancer
