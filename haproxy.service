@@ -8,10 +8,10 @@ KillMode=none
 EnvironmentFile=/etc/environment
 ExecStartPre=-/usr/bin/docker kill %n
 ExecStartPre=-/usr/bin/docker rm %n
-ExecStartPre=/usr/bin/docker pull darcys22/haproxy
+ExecStartPre=/usr/bin/docker pull darcys22/haproxyssl
 ## Force SSL
 #ExecStart=/usr/bin/docker run --name %n -p ${COREOS_PUBLIC_IPV4}:80:80 darcys22/haproxy
-ExecStart=/usr/bin/docker run --name %n -p ${COREOS_PUBLIC_IPV4}:80:80 darcys22/haproxyssl -v ~/config/certs:/etc/ssl/private/
+ExecStart=/usr/bin/docker run -v /home/core/config/certs:/etc/ssl/private/ --name %n -p ${COREOS_PUBLIC_IPV4}:443:443 -p ${COREOS_PUBLIC_IPV4}:80:80 darcys22/haproxyssl
 ExecStop=/usr/bin/docker stop -t 3 %n
 
 Restart=always
